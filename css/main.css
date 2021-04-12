@@ -10,6 +10,18 @@ button:focus {
     outline: none;
 }
 
+.AdminBox {
+    margin-top: 2vh;
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+    border-style: solid;
+    float: left;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+}
+
 header {
     display: flex;
     justify-content: space-between;
