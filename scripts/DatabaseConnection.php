@@ -1,8 +1,5 @@
 <?php
-namespace scripts;
 
-use PDO;
-use PDOStatement;
 
 class DatabaseConnection
 {
