@@ -1,5 +1,8 @@
 {
-    "require": {
-        "vlucas/phpdotenv": "^5.3"
-    }
+  "require": {
+    "vlucas/phpdotenv": "^5.3",
+    "ext-pdo": "*"
+  },
+  "name": "engroceries/webshop",
+  "description": ""
 }
