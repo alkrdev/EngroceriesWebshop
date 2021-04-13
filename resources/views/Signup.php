@@ -12,12 +12,12 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+    <link rel="manifest" href="<?= asset('site.webmanifest') ?>">
+    <link rel="apple-touch-icon" href="<?= asset('icon.png') ?>">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="../../public/css/normalize.css">
-  <link rel="stylesheet" href="../../public/css/main.css">
+    <link type="text/css" rel="stylesheet" href="<?=asset('css/normalize.css')?>">
+    <link type="text/css" rel="stylesheet" href="<?=asset('css/main.css')?>">
 
 
   <meta name="theme-color" content="#fafafa">
@@ -40,9 +40,8 @@
   </main>
   <footer></footer>
 
-  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <script src="<?= asset('js/vendor/modernizr-3.11.2.min.js')?>"></script>
+  <script src="<?=asset('js/main.js')?>"></script>
 </body>
 
 </html>
