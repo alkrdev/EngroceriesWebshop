@@ -97,4 +97,5 @@ class DatabaseConnection
     $this->success = $stmt->execute($parameters);
     return $stmt->fetchAll();
   }
+}
 

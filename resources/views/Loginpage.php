@@ -1,16 +1,3 @@
-<?php
-session_start();
-require_once 'vendor/autoload.php';
-define('ROOT_DIR', dirname(__DIR__));
-
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-require_once 'scripts/DatabaseConnection.php';
-
-$db = new DatabaseConnection();
-$db->connect();
-
-?>
 
 <!doctype html>
 <html class="no-js" lang="da-DK">
@@ -26,8 +13,8 @@ $db->connect();
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="<?=asset('site.webmanifest')?>">
+  <link rel="apple-touch-icon" href="<?=asset('icon.png')?>">
   <!-- Place favicon.ico in the root directory -->
 
   <!-- JQuery CDN -->
@@ -36,8 +23,8 @@ $db->connect();
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link type="text/css" rel="stylesheet" href="<?=asset('css/normalize.css')?>">
+  <link type="text/css" rel="stylesheet" href="<?=asset('css/main.css')?>">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -77,9 +64,8 @@ $db->connect();
 </main>
 <footer></footer>
 
-<script src="js/vendor/modernizr-3.11.2.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script src="<?= asset('js/vendor/modernizr-3.11.2.min.js') ?>"></script>
+<script src="<?= asset('js/main.js') ?>"></script>
 </body>
 
 </html>
