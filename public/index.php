@@ -1,15 +1,11 @@
 <?php
-session_start();
-require_once 'vendor/autoload.php';
 define('ROOT_DIR', dirname(__DIR__));
+define('VIEW_DIR', ROOT_DIR . '/resources/views');
+require ROOT_DIR. '/vendor/autoload.php';
+session_start();
 
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv = \Dotenv\Dotenv::createImmutable(ROOT_DIR);
 $dotenv->load();
-require_once 'scripts/DatabaseConnection.php';
-
-$db = new DatabaseConnection();
-$db->connect();
-
 ?>
 
 <!doctype html>
