@@ -1,6 +1,7 @@
 <?php
 define('ROOT_DIR', dirname(__DIR__));
 define('VIEW_DIR', ROOT_DIR . '/resources/views');
+define('COMPONENT_DIR', ROOT_DIR . '/resources/components');
 require ROOT_DIR. '/vendor/autoload.php';
 session_start();
 

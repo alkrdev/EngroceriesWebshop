@@ -30,6 +30,11 @@ function asset($path):string
     return getenv('ASSETS') . $path;
 }
 
+function component($path):string
+{
+    return COMPONENT_DIR . "/" . $path;
+}
+
 function url(?string $name = null, $parameters = null, ?array $getParams = null): Url
 {
     return Router::getUrl($name, $parameters, $getParams);
@@ -115,3 +120,5 @@ function view($name, $params = [])
     @include(sprintf('%s/%s.php', VIEW_DIR, $name));
     return ob_get_clean();
 }
+
+?>
