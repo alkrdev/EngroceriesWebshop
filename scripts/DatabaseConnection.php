@@ -83,11 +83,6 @@ class DatabaseConnection
     $this->success = $stmt->execute($parameters);
   }
 
-  public function nonSelect(string $query, array $params = []): bool
-  {
-    return $this->pdo->prepare($query)->execute($params);
-  }
-
   /**
    * Send a single SQL query with parameters and fetch all returned rows.
    * This uses prepared statements, and expects one array element for every question mark in the SQL string.
@@ -103,14 +98,3 @@ class DatabaseConnection
     return $stmt->fetchAll();
   }
 
-  /**
-   * Create a statement object using a query string
-   *
-   * @param string $query
-   * @return false|\PDOStatement
-   */
-  public function CreateStatement(string $query): PDOStatement
-  {
-    return $this->pdo->prepare($query);
-  }
-}
