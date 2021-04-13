@@ -1,6 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\Pure;
 use Pecee\Http\Input\InputHandler;
 use Pecee\SimpleRouter\SimpleRouter as Router;
 use Pecee\Http\Url;
