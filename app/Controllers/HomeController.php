@@ -48,4 +48,17 @@ class HomeController
         }
     }
 
+    public function logout() {
+        unset($_SESSION['is_auth']);
+        unset($_SESSION['user_role']);
+        unset($_SESSION['user_id']);
+        unset($_SESSION['name']);
+
+        $_SESSION = [];
+
+        session_destroy();
+
+        return view('Loginpage');
+    }
+
 }

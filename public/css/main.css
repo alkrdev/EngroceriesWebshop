@@ -36,7 +36,7 @@ header {
     height: 85px;
 }
 
-header input {    
+header #search {    
     border-radius: 8px;
     padding: 10px;
     width: 300px;
@@ -53,19 +53,57 @@ header a {
     font-size: 1.5em;
 }
 
-header div {
+#profilebutton {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     margin: 0;
-    padding: 0 25px;
+    width: 185px;
 }
 
-header div:hover {
+#profilebutton input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+#profilebutton form {
+    display: none;
+    position: absolute;
+    top: 85px;
+    z-index: 999;
+    width: 185px;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+}
+
+#profilebutton form button {
+    display: flex;
+} 
+
+#profilebutton:hover {
     background: rgb(218, 218, 218);
     cursor: pointer;
 }
+
+#profilebutton:hover form {
+    display: block;
+    background: rgb(218, 218, 218);
+} 
+
+#profilebutton:hover form:hover {
+    display: block;
+    background: rgb(156, 156, 156);
+} 
 
 main {
     padding: 25px

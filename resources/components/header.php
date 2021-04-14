@@ -4,10 +4,10 @@
     <!-- <nav>
     </nav> -->
     <?php if ($_SESSION['is_auth'] == true) { ?>
-        <div><?= $_SESSION['name'] ?>
-            <ul>
-                <li>Log ud</li>
-            </ul>
+        <div id="profilebutton"><?= $_SESSION['name'] ?>            
+            <form action="<?= url('logout')?>" method="post">
+                <input type="submit" value="Log ud"></input>
+            </form>
         </div>
     <?php } ?>
 </header>
