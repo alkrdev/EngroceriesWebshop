@@ -27,7 +27,6 @@
             <button type="submit" name="login-submit" id="login-submit" value="Login">Log Ind</button>
           </form>
         </article>
-      <?php } ?>
         
         <aside>
           <h3>Jordens bedste råvarer leveret direkte til døren</h3>
@@ -36,6 +35,7 @@
           <p>Grøntsagerne dyrker vi i samarbejde med passionerede økologiske avlere herhjemme og i udlandet.</p>
           <button>Bliv Kunde</button>
         </aside>
+      <?php } ?>
       </section>
     </main>
     <footer></footer>
