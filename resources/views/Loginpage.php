@@ -16,13 +16,14 @@
       <section>
         <article>
           <h2>Kunde Login</h2>
-          <form>
+          <span class="loginerror"><?php if (ISSET($_SESSION['error'])) { echo $_SESSION['error']; } ?></span>
+          <form action="<?= url('login')?>" method="post">
             <input type="text" name="email" id="email" placeholder="Email">
             <span id="emailvalidate" class="hidden">Please enter a valid Email address</span>
 
             <input type="password" name="psw" id="psw" placeholder="Kode">
 
-            <button type="submit">Log Ind</button>
+            <button type="submit" name="login-submit" id="login-submit" value="Login">Log Ind</button>
           </form>
         </article>
         <aside>
