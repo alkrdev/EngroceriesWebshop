@@ -14,6 +14,7 @@
       <h1>Velkommen til Engroceries A/S</h1>
       <p>Vi kan tilbyde vores kunder de mest populære produkter på markedet, til de skarpeste priser.</p>
       <section>
+      <?php if ($_SESSION['is_auth'] != true) { ?>
         <article>
           <h2>Kunde Login</h2>
           <span class="loginerror"><?php if (ISSET($_SESSION['error'])) { echo $_SESSION['error']; } ?></span>
@@ -26,6 +27,8 @@
             <button type="submit" name="login-submit" id="login-submit" value="Login">Log Ind</button>
           </form>
         </article>
+      <?php } ?>
+        
         <aside>
           <h3>Jordens bedste råvarer leveret direkte til døren</h3>
           <p>Engroceries tilbyder sæsonens bedste råvarer til storkøkkener, kantiner og restauranter - leveret direkte til
