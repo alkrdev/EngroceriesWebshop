@@ -1,3 +1,7 @@
+<?php
+    /** @var array $params */
+    define('Products', $params);
+?>
 <!doctype html>
 <html class="no-js" lang="da-DK">
 
@@ -16,7 +20,13 @@
         </div>
         <div class="filter-container">
         </div>
-
+        <?php
+        foreach (Products as $product){
+          ?>
+            <p><?=$product['name']?></p>
+            <?php
+        }
+    ?>
     </section>
 </main>
 <footer></footer>

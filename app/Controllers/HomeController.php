@@ -24,19 +24,19 @@ class HomeController
                 if (count($rows) > 0) {
                     $row = $rows[0];
                     if ($row['password'] == hash('sha256', $pass)) {
-    
+
                         $_SESSION['is_auth'] = true;
                         $_SESSION['user_role'] = $row['role'];
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['name'] = $row['name'];
 
-                        return view('Loginpage');
+                        return view('Shop', $this->getProducts());
                     }
                     else {
                         $_SESSION['error'] = "Invalid email or password. Please try again.";
                         return view('Loginpage');
                     }
-                } else {                    
+                } else {
                     $_SESSION['error'] = "Invalid email or password. Please try again.";
                     return view('Loginpage');
                 }
@@ -60,5 +60,16 @@ class HomeController
 
         return view('Loginpage');
     }
+
+    public function getProducts()
+    {
+        $db = new DatabaseConnection();
+        $db->Connect();
+
+       return  $db->QueryWithParamsFetchAll(<<<SQL
+            SELECT * FROM products 
+       SQL, []);
+    }
+
 
 }
