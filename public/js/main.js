@@ -12,6 +12,30 @@ $(document).ready(function() {
             $("#emailvalidate").show();
         }
     })
+    
+    $("#pswregister").on("change", function() {
+        var regex = /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!"#\$%&'\(\)\*\+,-\.\/:;<=>\?@[\]\^_`\{\|}~])[a-zA-Z0-9!"#\$%&'\(\)\*\+,-\.\/:;<=>\?@[\]\^_`\{\|}~]{8,}$/
+        var span = $(this).next();
+
+        if (this.value.match(regex)) {
+            span.hide();
+        } else {
+            span.show();
+        }
+    })
+
+    $("#pswregisterrepeat").on("change", function() {
+        var span = $(this).next();
+    })
+
+    $("#emailregister").on("change", function() {
+        var span = $(this).next();
+    })
+
+    $("#cvrregister").on("change", function() {
+        var span = $(this).next();
+    })
+
 
 
     $("#psw").on("change", function() {

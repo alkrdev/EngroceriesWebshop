@@ -10,7 +10,7 @@ button:focus {
     outline: none;
 }
 
-#emailvalidate {
+.validate {
     display: none;
     color: red;
 }
@@ -106,38 +106,35 @@ header a {
 } 
 
 main {
-    padding: 25px
 }
 
 section {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    min-height: 500px;
 }
 
 section article {
+    border: 1px gray solid;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    width: 45%;
-    border: 1px rgb(87,87,87) solid;
+    width: 322px;
 }
 
 section aside {
-    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 55px;
 }
 
 section form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 200px;
-    width: 240px;
-}
-
-section form input {
-    border-radius: 13px;
-    padding: 10px;
 }
 
 section form label {

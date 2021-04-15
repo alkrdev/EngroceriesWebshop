@@ -18,7 +18,7 @@
                         <span class="loginerror"><?php if (ISSET($_SESSION['error'])) { echo $_SESSION['error']; } ?></span>
                         <form action="<?= url('login')?>" method="post">
                             <input type="text" name="email" id="email" placeholder="Email">
-                            <span id="emailvalidate" class="hidden">Please enter a valid Email address</span>
+                            <span id="emailvalidate" class="validate">Please enter a valid Email address</span>
 
                             <input type="password" name="psw" id="psw" placeholder="Kode">
 
