@@ -4,14 +4,12 @@ use App\DatabaseConnection;
 
 class HomeController
 {
-    public function index()
-    {
+    public function index() {
         $_SESSION["error"] = "";
         return view('Loginpage');
     }
 
-    public function login()
-    {
+    public function login() {
         if (isset($_POST['login-submit'])) {
             if (isset($_POST['email']) && isset($_POST['psw'])) {
                 $email = $_POST['email'];
@@ -59,6 +57,10 @@ class HomeController
         session_destroy();
 
         return view('Loginpage');
+    }
+
+    public function register() {
+        return view('Register');
     }
 
 }
