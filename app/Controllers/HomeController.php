@@ -86,7 +86,7 @@ class HomeController
     }
     public function shop() {
 
-        return view('Shop');
+        return view('Shop', $this->getProducts());
     }
 
     public function storage() {

@@ -10,7 +10,6 @@ include_once(component("head.php"));
 ?>
 
 <body>
-    ?> 
 <?php
 include_once(component("header.php"));
 ?>
@@ -43,7 +42,6 @@ include_once(component("header.php"));
 </main>
 <footer></footer>
 
-<link type="text/css" rel="stylesheet" href="<?=asset(ROOT_DIR . 'css/shop.css')?>">
 <script src="<?= asset('js/vendor/modernizr-3.11.2.min.js') ?>"></script>
 <script src="<?= asset('js/main.js') ?>"></script>
 </body>
