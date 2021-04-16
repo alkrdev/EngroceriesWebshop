@@ -18,28 +18,26 @@
     <link rel="apple-touch-icon" href="<?= asset('icon.png') ?>">
     <!-- Place favicon.ico in the root directory -->
 
-    <link type="text/css" rel="stylesheet" href="<?= asset('css/normalize.css') ?>">
-    <link type="text/css" rel="stylesheet" href="<?= asset('css/main.css') ?>">
-	    <link type="text/css" rel="stylesheet" href="<?= asset('css/shop.css') ?>">
+    <link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/normalize.css') ?>">
+    <link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/main.css') ?>">
+	<link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/shop.css') ?>">
 
     <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-    <header>
-        <h1>Engroceries</h1>
-        <nav>
-         
-        </nav>
-        <input type="text" name="search" id="search">
-    </header>
+<?php 
+        include_once(component("header.php"));
+    ?> 
+ 
     <main>
         <section>    
             <div class="filter-container">
                 <h1>Filter <h1>
-            
+
 
             </div>
+ 
 
             <div class="productcontainer" > 
                 <div class="product">

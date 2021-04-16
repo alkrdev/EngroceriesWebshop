@@ -19,9 +19,10 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
 
-    <link type="text/css" rel="stylesheet" href="<?=asset('css/normalize.css')?>">
-    <link type="text/css" rel="stylesheet" href="<?=asset('css/main.css')?>">
-    <link type="text/css" rel="stylesheet" href="<?=asset('css/shop.css')?>">
+            <link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/normalize.css') ?>">
+    <link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/main.css') ?>">
+	<link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/shop.css') ?>">
+
 
 
     <meta name="theme-color" content="#fafafa">

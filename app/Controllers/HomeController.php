@@ -31,7 +31,7 @@ class HomeController
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['name'] = $row['name'];
 
-                        return view('Loginpage');
+                        return view('Shop');
                     }
                     else {
                         $_SESSION['error'] = "Invalid email or password. Please try again.";
@@ -79,7 +79,12 @@ class HomeController
 
     public function adminpanel() {
 
-        return view('Adminpanel');
+        return view('adminpanel');
+    }
+
+    public function dashboard() {
+
+        return view('dashboard');
     }
 
 
