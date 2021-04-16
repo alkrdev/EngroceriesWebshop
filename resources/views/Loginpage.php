@@ -31,7 +31,10 @@
                         <p>Engroceries tilbyder sæsonens bedste råvarer til storkøkkener, kantiner og restauranter - leveret direkte til
                             kundens dør</p>
                         <p>Grøntsagerne dyrker vi i samarbejde med passionerede økologiske avlere herhjemme og i udlandet.</p>
-                        <button>Bliv Kunde</button>
+                        
+                        <form action="<?= url('register')?>" method="post">
+                            <button>Bliv Kunde</button>
+                        </form>
                     </aside>
                 <?php } ?>
             </section>

@@ -9,6 +9,10 @@ class HomeController
         return view('Loginpage');
     }
 
+    public function register() {
+        return view('Register');
+    }
+
     public function login() {
         if (isset($_POST['login-submit'])) {
             if (isset($_POST['email']) && isset($_POST['psw'])) {
@@ -57,10 +61,6 @@ class HomeController
         session_destroy();
 
         return view('Loginpage');
-    }
-
-    public function register() {
-        return view('Register');
     }
 
 }

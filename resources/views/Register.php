@@ -26,13 +26,13 @@
                         <input type="password" name="psw" id="pswregisterrepeat" placeholder="Kode igen">
                         <span class="validate">Gentag koden præcist</span>
 
-                        <input type="text" name="email" id="emailregister" placeholder="Email">
+                        <input type="email" name="email" id="emailregister" placeholder="Email">
                         <span class="validate">Venligst indtast en korrekt email</span>
 
                         <input type="text" name="cvr" id="cvrregister" placeholder="CVR Nummer">
                         <span class="validate">CVR Nummeret skal være 8 cifre</span>
 
-                        <button type="submit" name="login-submit" id="login-submit" value="Login">Log Ind</button>
+                        <button type="submit" name="login-submit" id="login-submit" value="Login">Indsend ansøgning</button>
                     </form>
                 </article>
                 
@@ -41,7 +41,6 @@
                     <p>Engroceries tilbyder sæsonens bedste råvarer til storkøkkener, kantiner og restauranter - leveret direkte til
                         kundens dør</p>
                     <p>Grøntsagerne dyrker vi i samarbejde med passionerede økologiske avlere herhjemme og i udlandet.</p>
-                    <button>Bliv Kunde</button>
                 </aside>
             </section>
         </main>
