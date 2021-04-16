@@ -23,15 +23,19 @@
 
        
     </section>
+<center>     <img src="http://engrocerieswebshop.test/kp3.png" style="width: 1240px;">
+</center>
+
 </main>
 <footer></footer>
 
 <script src="<?= asset('js/vendor/modernizr-3.11.2.min.js') ?>"></script>
 <script src="<?= asset('js/main.js') ?>"></script>
 
-<link type="text/css" rel="stylesheet" href="<?= asset('http://51.195.160.14/normalize.css') ?>">
-    <link type="text/css" rel="stylesheet" href="<?= asset('http://51.195.160.14/main.css') ?>">
-	<link type="text/css" rel="stylesheet" href="<?= asset('http://51.195.160.14/shop.css') ?>">
+<link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/normalize.css') ?>">
+    <link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/main.css') ?>">
+	<link type="text/css" rel="stylesheet" href="<?= asset('http://engrocerieswebshop.test/css/shop.css') ?>">
+
 </body>
 
 </html>
