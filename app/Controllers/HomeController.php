@@ -12,6 +12,7 @@ class HomeController
         return view('Loginpage');
     }
 
+
     public function login()
     {
         if (isset($_POST['login-submit'])) {
@@ -83,4 +84,36 @@ class HomeController
 
         return view('ProductPage', $product);
     }
+    public function shop() {
+
+        return view('Shop');
+    }
+
+    public function storage() {
+
+        return view('Storage');
+    }
+
+    public function orders() {
+
+        return view('Orders');
+    }
+
+    public function adminpanel() {
+
+        return view('adminpanel');
+    }
+
+    public function dashboard() {
+
+        return view('dashboard');
+    }
+
+
+    
+
 }
+
+
+
+

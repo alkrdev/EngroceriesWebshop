@@ -10,6 +10,7 @@ include_once(component("head.php"));
 ?>
 
 <body>
+    ?> 
 <?php
 include_once(component("header.php"));
 ?>
