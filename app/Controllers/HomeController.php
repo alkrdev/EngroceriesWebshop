@@ -10,6 +10,7 @@ class HomeController
         return view('Loginpage');
     }
 
+
     public function login()
     {
         if (isset($_POST['login-submit'])) {
@@ -61,4 +62,31 @@ class HomeController
         return view('Loginpage');
     }
 
+    public function shop() {
+
+        return view('Shop');
+    }
+
+    public function storage() {
+
+        return view('Storage');
+    }
+
+    public function orders() {
+
+        return view('Orders');
+    }
+
+    public function adminpanel() {
+
+        return view('Adminpanel');
+    }
+
+
+    
+
 }
+
+
+
+

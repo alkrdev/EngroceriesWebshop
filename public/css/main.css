@@ -15,19 +15,19 @@ button:focus {
     color: red;
 }
 
-
+.dashboardcontainer {
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    float: left;
+}
 
 .AdminBox {
-    margin-top: 2vh;
-    width: 300px;
-    height: 200px;
-    border-radius: 5px;
-    border-style: solid;
     float: left;
-    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.69);
+    margin-left: 50px;
 }
+
+
 
 header {
     display: flex;
@@ -43,6 +43,8 @@ header {
     padding: 20px;
     margin-top: 40px;
 }
+
+
 
 header input {    
     border-radius: 8px;
@@ -85,6 +87,28 @@ section {
     padding: 25px;
 
 }
+
+.button {
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 40px #b8b8b8, inset -20px -20px 40px #ffffff;
+    border: none;
+    color: rgb(31, 31, 31);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 200px;
+    width: 260px;
+    box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.29);
+    -moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.29);
+
+  }
 
 section article {
     display: flex;

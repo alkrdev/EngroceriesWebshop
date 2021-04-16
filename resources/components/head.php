@@ -21,6 +21,8 @@
 
     <link type="text/css" rel="stylesheet" href="<?=asset('css/normalize.css')?>">
     <link type="text/css" rel="stylesheet" href="<?=asset('css/main.css')?>">
+    <link type="text/css" rel="stylesheet" href="<?=asset('css/shop.css')?>">
+
 
     <meta name="theme-color" content="#fafafa">
 </head>
