@@ -19,9 +19,9 @@
     
     </div>
 
-
-
     </section>
+    <center> <img src="http://engrocerieswebshop.test/kp.png" style="width: 640px;"> </center>
+
 </main>
 <footer></footer>
 

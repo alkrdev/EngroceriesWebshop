@@ -22,6 +22,9 @@
 
 
     </section>
+
+  <center> <img src="http://engrocerieswebshop.test/kp2.png" style="width: 640px;"> </center> 
+
 </main>
 <footer></footer>
 
