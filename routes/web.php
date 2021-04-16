@@ -9,3 +9,5 @@ Router::post('/adminpanel', 'HomeController@adminpanel')->name('adminpanel');
 Router::post('/dashboard', 'HomeController@dashboard')->name('dashboard');
 Router::post('/shop', 'HomeController@Shop')->name('Shop');
 Router::post('/', 'HomeController@logout')->name('logout');
+
+Router::get('/product/{id?}', 'HomeController@getProduct');
