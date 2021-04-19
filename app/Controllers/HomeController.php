@@ -59,6 +59,18 @@ class HomeController
        SQL, []);
     }
 
+    public function getProduct($id)
+    {
+        $db = new DatabaseConnection();
+        $db->Connect();
+
+        $product = $db->QueryWithParamsFetchAll(<<<SQL
+            SELECT * FROM products WHERE id = ?
+        SQL,[$id]);
+
+        return view('Productpage', $product);
+    }
+
     public function logout()
     {
         unset($_SESSION['is_auth']);
@@ -73,17 +85,7 @@ class HomeController
         return view('Loginpage');
     }
 
-    public function getProduct($id)
-    {
-        $db = new DatabaseConnection();
-        $db->Connect();
 
-        $product = $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT * FROM products WHERE id = ?
-        SQL,[$id]);
-
-        return view('ProductPage', $product);
-    }
     public function shop() {
 
         return view('Shop', $this->getProducts());
@@ -100,7 +102,6 @@ class HomeController
     }
 
     public function adminpanel() {
-
         return view('adminpanel');
     }
 
