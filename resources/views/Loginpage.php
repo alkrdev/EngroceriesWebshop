@@ -11,9 +11,15 @@
         include_once(component("header.php"));
     ?> 
     <main>
+
+    <div class="title">
       <h1>Velkommen til Engroceries A/S</h1>
       <p>Vi kan tilbyde vores kunder de mest populære produkter på markedet, til de skarpeste priser.</p>
-      <section>
+    </div>
+    
+      <section style="justify-content: space-evenly;">
+
+      
       <?php if ($_SESSION['is_auth'] != true) { ?>
         <article>
           <h2>Kunde Login</h2>

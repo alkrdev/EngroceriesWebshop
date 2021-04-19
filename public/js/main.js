@@ -17,4 +17,9 @@ $(document).ready(function() {
     $("#psw").on("change", function() {
         // Password validation?
     })
+
+    $(".product").click(function ()
+    {
+        $(location).attr("href", "/shop/product/" + this.dataset.id);
+    })
 })
