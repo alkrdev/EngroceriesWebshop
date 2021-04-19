@@ -13,7 +13,7 @@
 
 
     <section>
-    <div class="dashboardcontainer">
+        <div class="dashboard-container">
     
      <h1>Ordre håndtering</h1>
     
