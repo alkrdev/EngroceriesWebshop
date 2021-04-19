@@ -14,10 +14,18 @@ include_once(component("head.php"));
         ?> 
         <main>
             <section id="shop">
+                <div id="toolbar">
+                        <h2>Sotere efter:</h2>
+                        <button class="price-sort"  type="submit" name="Orders" id="Orders" value="Orders">Pris: Høj til lav</button>
+                        <button class="price-sort"  type="submit" name="Orders" id="Orders" value="Orders">Pris: Lav til Høj</button>
+                        <button class="price-sort"  type="submit" name="Orders" id="Orders" value="Orders">Alfabetisk</button>
+                        <button class="price-sort"  type="submit" name="Orders" id="Orders" value="Orders">Varenumre</button>
+                </div>
+
                 <div class="filter-container">
                     <h1>Filter <h1>
                 </div>
-
+                
                 <div class="productcontainer">
                     <?php
                     foreach (Products as $product) {
@@ -33,6 +41,8 @@ include_once(component("head.php"));
                         <?php
                     }
                     ?>
+
+                    
                 
                 </div>
             </section>

@@ -22,6 +22,20 @@
     font-weight: bold;
 }
 
+.price-sort {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 40px;
+}
+
+.price-sort:focus {
+    background-color: rgb(120, 214, 26);
+    color: white;
+}
+
+
+
+
 .product:hover {
     cursor: pointer;
     margin: 13px;
@@ -48,6 +62,12 @@
     background-color: white;
     position: fixed;
     left: 50px;
+}
+
+#toolbar{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
