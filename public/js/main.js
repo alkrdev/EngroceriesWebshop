@@ -1,7 +1,7 @@
 // Source: https://stackoverflow.com/a/46181
 function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
 }
 
 $(document).ready(function() {
@@ -19,6 +19,9 @@ $(document).ready(function() {
         // Password validation?
     })
 
+  $(".product").click(function () {
+    $(location).attr("href", "/shop/product/" + this.dataset.product_number);
+  })
 
     // REGISTER
     $("#pswregister").on("change", function() {
