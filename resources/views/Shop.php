@@ -13,7 +13,7 @@ include_once(component("head.php"));
             include_once(component("header.php"));
         ?> 
         <main>
-            <section>
+            <section id="shop">
                 <div class="filter-container">
                     <h1>Filter <h1>
                 </div>

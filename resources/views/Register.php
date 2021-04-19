@@ -9,7 +9,7 @@
             include_once(component("header.php"));
         ?> 
         <main>
-            <section>            
+            <section id="register">            
                 <article>
                     <h2>Registrering</h2>
                     <form action="<?= url('login')?>" method="post">
@@ -46,7 +46,7 @@
         </main>
         <footer></footer>
 
-        <script src="<?= asset('js/vendor/modernizr-3.11.2.min.js')?>"></script>
-        <script src="<?=asset('js/main.js')?>"></script>
+        <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+        <script src="/js/main.js"></script>
     </body>
 </html>
