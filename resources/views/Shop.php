@@ -17,8 +17,6 @@ include_once(component("header.php"));
     <section>
         <div class="filter-container">
             <h1>Filter <h1>
-
-
         </div>
 
         <div class="productcontainer">

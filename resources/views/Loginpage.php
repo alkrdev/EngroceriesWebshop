@@ -14,7 +14,9 @@
 
     <div class="title">
       <h1>Velkommen til Engroceries A/S</h1>
-      <p>Vi kan tilbyde vores kunder de mest populære produkter på markedet, til de skarpeste priser.</p></div>
+      <p>Vi kan tilbyde vores kunder de mest populære produkter på markedet, til de skarpeste priser.</p>
+    </div>
+    
       <section style="justify-content: space-evenly;">
 
       
