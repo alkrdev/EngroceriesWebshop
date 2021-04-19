@@ -5,6 +5,8 @@ function validateEmail(email) {
 }
 
 $(document).ready(function() {
+
+    //LOGIN
     $("#email").on("change", function() {
         if (validateEmail(this.value)) {
             $("#emailvalidate").hide();
@@ -13,9 +15,47 @@ $(document).ready(function() {
         }
     })
 
-
     $("#psw").on("change", function() {
         // Password validation?
+    })
+
+
+    // REGISTER
+    $("#pswregister").on("change", function() {
+        var regex = /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[!"#\$%&'\(\)\*\+,-\.\/:;<=>\?@[\]\^_`\{\|}~])[a-zA-Z0-9!"#\$%&'\(\)\*\+,-\.\/:;<=>\?@[\]\^_`\{\|}~]{8,}$/
+        var span = $(this).next();
+
+        if (this.value.match(regex)) {
+            span.hide();
+        } else {
+            span.show();
+        }
+    })
+
+    $("#pswregisterrepeat").on("change", function() {
+        var span = $(this).next();
+        var value = $("#pswregister").val();
+
+        if (this.value === value) {
+            span.hide();
+        } else {
+            span.show();
+        }
+    })
+
+    $("#cvrregister").on("change", function() {
+        var span = $(this).next();
+        var regex = /^\d{8}$/
+
+        if (this.value.match(regex)) {
+            span.hide();
+        } else {
+            span.show();
+        }
+    })
+
+    $("#sendtoregister").click(function() {
+        $(location).attr("href", "/register");
     })
 
     $(".product").click(function ()
