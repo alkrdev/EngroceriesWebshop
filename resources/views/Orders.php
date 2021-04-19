@@ -11,10 +11,8 @@ include_once(component("header.php"));
 ?>
 <main>
     <section>
-        <div class="dashboardcontainer">
-
+        <div class="dashboard-container">
             <h1>Ordre håndtering</h1>
-
         </div>
     </section>
     <img src="http://engrocerieswebshop.test/kp3.png" style="width: 1240px;">

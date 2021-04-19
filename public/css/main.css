@@ -10,12 +10,12 @@ button:focus {
     outline: none;
 }
 
-#emailvalidate {
+.validate {
     display: none;
     color: red;
 }
 
-.dashboardcontainer {
+.dashboard-container {
     margin-right: auto;
     margin-left: auto;
     width: 80%;
@@ -77,18 +77,15 @@ header div:hover {
     cursor: pointer;
 }
 
-main {
-}
-
 section {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 25px;
 
 }
 
-.button {
+.dashboard-icon {
     border-radius: 50px;
     background: #e0e0e0;
     box-shadow: inset 20px 20px 40px #b8b8b8, inset -20px -20px 40px #ffffff;
