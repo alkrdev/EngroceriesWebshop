@@ -57,4 +57,9 @@ $(document).ready(function() {
     $("#sendtoregister").click(function() {
         $(location).attr("href", "/register");
     })
+
+    $(".product").click(function ()
+    {
+        $(location).attr("href", "/shop/product/" + this.dataset.id);
+    })
 })

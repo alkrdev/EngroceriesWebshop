@@ -9,9 +9,7 @@
             include_once(component("header.php"));
         ?> 
         <main>
-
             <section>
-
             </section>
         </main>
         <footer></footer>

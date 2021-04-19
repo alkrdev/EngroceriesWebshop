@@ -1,8 +1,14 @@
+<?php
+/* @var array $params */
+$product = $params;
+var_dump($product);
+?>
+
 <!doctype html>
 <html class="no-js" lang="da-DK">
 
-<?php 
-    include_once(component("head.php"));
+<?php
+include_once(component("head.php"));
 ?>
     <body>
         <?php 
