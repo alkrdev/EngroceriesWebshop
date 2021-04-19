@@ -55,7 +55,7 @@ class HomeController
         $db->Connect();
 
         return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT * FROM products 
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products
        SQL, []);
     }
 
@@ -65,8 +65,8 @@ class HomeController
         $db->Connect();
 
         $product = $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT * FROM products WHERE id = ?
-        SQL,[$id]);
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products WHERE product_number = ?
+        SQL, [$id]);
 
         return view('Productpage', $product);
     }
@@ -86,32 +86,35 @@ class HomeController
     }
 
 
-    public function shop() {
+    public function shop()
+    {
 
         return view('Shop', $this->getProducts());
     }
 
-    public function storage() {
+    public function storage()
+    {
 
         return view('Storage');
     }
 
-    public function orders() {
+    public function orders()
+    {
 
         return view('Orders');
     }
 
-    public function adminpanel() {
+    public function adminpanel()
+    {
         return view('adminpanel');
     }
 
-    public function dashboard() {
+    public function dashboard()
+    {
 
         return view('dashboard');
     }
 
-
-    
 
 }
 

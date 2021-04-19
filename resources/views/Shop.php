@@ -16,16 +16,15 @@ include_once(component("header.php"));
 <main>
     <section>
         <div class="filter-container">
-            <h1>Filter <h1>
-
-
+            <h1>Filter </h1>
         </div>
 
         <div class="productcontainer">
             <?php
             foreach (Products as $product) {
                 ?>
-                <div class="product" data-id="<?=$product['product_number']?>">
+                <div class="product" data-id="<?= $product['id'] ?>"
+                     data-product_number="<?= $product['product_number'] ?>">
                     <img src="<?= '/images/' . $product['image'] ?>"
                          style="width: 140px;">
                     <h2> <?= $product['name'] ?> </h2>
@@ -36,14 +35,14 @@ include_once(component("header.php"));
                 <?php
             }
             ?>
-          
+
         </div>
     </section>
 </main>
 <footer></footer>
 
-<script src="<?= asset('/js/vendor/modernizr-3.11.2.min.js') ?>"></script>
-<script src="<?= asset('/js/main.js') ?>"></script>
+<script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 
 </html>

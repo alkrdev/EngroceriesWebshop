@@ -1,51 +1,53 @@
-
 <!doctype html>
 <html class="no-js" lang="da-DK">
 
-<?php 
-  include_once(component("head.php"));
-?> 
+<?php
+include_once(component("head.php"));
+?>
 
-  <body>
-    <?php 
-        include_once(component("header.php"));
-    ?> 
-    <main>
+<body>
+<?php
+include_once(component("header.php"));
+?>
+<main>
 
     <div class="title">
-      <h1>Velkommen til Engroceries A/S</h1>
-      <p>Vi kan tilbyde vores kunder de mest populære produkter på markedet, til de skarpeste priser.</p></div>
-      <section style="justify-content: space-evenly;">
+        <h1>Velkommen til Engroceries A/S</h1>
+        <p>Vi kan tilbyde vores kunder de mest populære produkter på markedet, til de skarpeste priser.</p></div>
+    <section style="justify-content: space-evenly;">
 
-      
-      <?php if ($_SESSION['is_auth'] != true) { ?>
-        <article>
-          <h2>Kunde Login</h2>
-          <span class="loginerror"><?php if (ISSET($_SESSION['error'])) { echo $_SESSION['error']; } ?></span>
-          <form action="<?= url('login')?>" method="post">
-            <input type="text" name="email" id="email" placeholder="Email">
-            <span id="emailvalidate" class="hidden">Please enter a valid Email address</span>
 
-            <input type="password" name="psw" id="psw" placeholder="Kode">
+        <?php if ($_SESSION['is_auth'] != true) { ?>
+            <article>
+                <h2>Kunde Login</h2>
+                <span class="loginerror"><?php if (isset($_SESSION['error'])) {
+                        echo $_SESSION['error'];
+                    } ?></span>
+                <form action="<?= url('login') ?>" method="post">
+                    <input type="text" name="email" id="email" placeholder="Email">
+                    <span id="emailvalidate" class="hidden">Please enter a valid Email address</span>
 
-            <button type="submit" name="login-submit" id="login-submit" value="Login">Log Ind</button>
-          </form>
-        </article>
-        
-        <aside>
-          <h3>Jordens bedste råvarer leveret direkte til døren</h3>
-          <p>Engroceries tilbyder sæsonens bedste råvarer til storkøkkener, kantiner og restauranter - leveret direkte til
-            kundens dør</p>
-          <p>Grøntsagerne dyrker vi i samarbejde med passionerede økologiske avlere herhjemme og i udlandet.</p>
-          <button>Bliv Kunde</button>
-        </aside>
-      <?php } ?>
-      </section>
-    </main>
-    <footer></footer>
+                    <input type="password" name="psw" id="psw" placeholder="Kode">
 
-    <script src="<?= asset('js/vendor/modernizr-3.11.2.min.js') ?>"></script>
-    <script src="<?= asset('js/main.js') ?>"></script>
-  </body>
+                    <button type="submit" name="login-submit" id="login-submit" value="Login">Log Ind</button>
+                </form>
+            </article>
+
+            <aside>
+                <h3>Jordens bedste råvarer leveret direkte til døren</h3>
+                <p>Engroceries tilbyder sæsonens bedste råvarer til storkøkkener, kantiner og restauranter - leveret
+                    direkte til
+                    kundens dør</p>
+                <p>Grøntsagerne dyrker vi i samarbejde med passionerede økologiske avlere herhjemme og i udlandet.</p>
+                <button>Bliv Kunde</button>
+            </aside>
+        <?php } ?>
+    </section>
+</main>
+<footer></footer>
+
+<script src="/js/vendor/modernizr-3.11.2.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
 
 </html>
