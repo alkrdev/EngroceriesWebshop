@@ -86,7 +86,6 @@ class HomeController
         return view('Loginpage');
     }
 
-
     public function shop()
     {
 
@@ -115,7 +114,6 @@ class HomeController
 
         return view('dashboard');
     }
-
 
 }
 
