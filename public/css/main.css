@@ -10,7 +10,7 @@ button:focus {
     outline: none;
 }
 
-.validate {
+#emailvalidate {
     display: none;
     color: red;
 }
@@ -82,9 +82,10 @@ main {
 
 section {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     padding: 25px;
+
 }
 
 .dashboard-icon {
