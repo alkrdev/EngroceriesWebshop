@@ -10,7 +10,7 @@ button:focus {
     outline: none;
 }
 
-#emailvalidate {
+.validate {
     display: none;
     color: red;
 }

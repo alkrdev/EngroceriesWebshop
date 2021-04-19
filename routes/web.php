@@ -8,7 +8,7 @@ Router::post('/varelager', 'HomeController@storage')->name('storage');
 Router::post('/adminpanel', 'HomeController@adminpanel')->name('adminpanel');
 Router::post('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
-Router::post('/', 'HomeController@register')->name('register');
+Router::post('/register', 'HomeController@register')->name('register');
 Router::post('/', 'HomeController@logout')->name('logout');
 
 Router::group(['prefix' => '/shop'], function () {
