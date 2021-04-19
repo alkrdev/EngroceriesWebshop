@@ -20,6 +20,6 @@ $(document).ready(function() {
 
     $(".product").click(function ()
     {
-        $(location).attr("href", "/product/" + this.dataset.id);
+        $(location).attr("href", "/shop/product/" + this.dataset.id);
     })
 })
