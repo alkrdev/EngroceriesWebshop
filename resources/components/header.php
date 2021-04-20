@@ -1,14 +1,16 @@
+
+
 <header>
     <h1>Engroceries</h1>
-    <input type="text" name="search" id="search">
+    <?php if ($_SERVER["REQUEST_URI"] != "/login") { ?>
+        <input type="text" name="search" id="search">    
+    <?php } ?>
     <!-- <nav>
     </nav> -->
     <?php if ($_SESSION['is_auth'] == true) { ?>
 
 
   <div class="navcontainer">
-
-       
         <div class="nav" type="submit" name="dashboard" id="dashboard" value="dashboard">
             <a href="<?= url('dashboard')?>">
                 <button class="dashboard">Dashboard</button>
