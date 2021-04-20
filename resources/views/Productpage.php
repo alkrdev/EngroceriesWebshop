@@ -28,7 +28,13 @@ include_once(component("head.php"));
                     <p>VareNr. <?=$product['product_number']?></p>
                     <h3>Pris kr. <?=$product['price_per_unit']?>,-</h3>
                     <h2>Beskrivelse: <?=$product['description']?></h2>
-                    <button type="submit">Bestil</button>
+                    <form>
+                        <div>
+                            
+                            <button type="submit">Bestil</button>
+                        </div>
+                    </form>
+
                 </aside>
             </section>
         </main>

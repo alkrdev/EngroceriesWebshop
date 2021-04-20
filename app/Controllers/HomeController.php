@@ -120,7 +120,10 @@ class HomeController
         return view('dashboard');
     }
 
+    public function addToCart($id)
+    {
 
+    }
 
 }
 
