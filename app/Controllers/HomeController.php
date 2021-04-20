@@ -8,7 +8,11 @@ class HomeController
 {
     public function index() {
         $_SESSION["error"] = "";
-        return view('Loginpage');
+        if (!$_POST['psw']){
+            $_SESSION['loginFailed'] = true;
+            redirect('/login');
+        }
+
     }
 
     public function register() {
@@ -33,8 +37,8 @@ class HomeController
                         $_SESSION['user_role'] = $row['role'];
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['name'] = $row['name'];
+                        redirect('/shop');
 
-                        return view('Shop', $this->getProducts());
                     } else {
                         $_SESSION['error'] = "Invalid email or password. Please try again.";
                         return view('Loginpage');
@@ -47,6 +51,8 @@ class HomeController
                 $_SESSION['error'] = "Please enter an email and password to login.";
                 return view('Loginpage');
             }
+        } else {
+            return view('Loginpage');
         }
     }
 
@@ -83,18 +89,16 @@ class HomeController
 
         session_destroy();
 
-        return view('Loginpage');
+        redirect('/login');
     }
 
     public function shop()
     {
-
         return view('Shop', $this->getProducts());
     }
 
     public function storage()
     {
-
         return view('Storage');
     }
 
@@ -114,6 +118,8 @@ class HomeController
 
         return view('dashboard');
     }
+
+
 
 }
 

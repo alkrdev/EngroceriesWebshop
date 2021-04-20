@@ -23,12 +23,13 @@ include_once(component("head.php"));
                     foreach (Products as $product) {
                         ?>
                         <div class="product" data-id="<?=$product['product_number']?>">
-                            <img src="<?= '/images/' . $product['image'] ?>"
-                                style="width: 140px;">
-                            <h2> <?= $product['name'] ?> </h2>
-                            <p><?= $product['description'] ?></p>
-                            <p class="price">Pris kr. <?= $product['price_per_unit'] ?>,- </p>
-                            <p> Varenr: <?= $product['product_number'] ?> </p>
+                            <img src="<?= '/images/' . $product['image'] ?>">
+                            <div>
+                                <h2> <?= $product['name'] ?> </h2>
+                                <p><?= substr($product['description'], 0, 50)?>...</p>
+                                <p class="price">Pris kr. <?= $product['price_per_unit'] ?>,- </p>
+                                <p> Varenr: <?= $product['product_number'] ?> </p>
+                            </div>
                         </div>
                         <?php
                     }

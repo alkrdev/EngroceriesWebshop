@@ -57,9 +57,6 @@ $(document).ready(function() {
         }
     })
 
-    $("#sendtoregister").click(function() {
-        $(location).attr("href", "/register");
-    })
 
     $(".product").click(function ()
     {
