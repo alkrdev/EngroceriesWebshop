@@ -8,11 +8,7 @@ class HomeController
 {
     public function index() {
         $_SESSION["error"] = "";
-        if (!$_POST['psw']){
-            $_SESSION['loginFailed'] = true;
-            redirect('/login');
-        }
-
+        return view('Loginpage');
     }
 
     public function register() {
@@ -20,7 +16,6 @@ class HomeController
     }
 
     public function login() {
-        $_SESSION["error"] = "";
         if (isset($_POST['login-submit'])) {
             if (isset($_POST['email']) && isset($_POST['psw'])) {
                 $email = $_POST['email'];
@@ -38,8 +33,8 @@ class HomeController
                         $_SESSION['user_role'] = $row['role'];
                         $_SESSION['user_id'] = $row['id'];
                         $_SESSION['name'] = $row['name'];
-                        redirect('/shop');
 
+                        return view('Shop', $this->getProducts());
                     } else {
                         $_SESSION['error'] = "Invalid email or password. Please try again.";
                         return view('Loginpage');
@@ -52,32 +47,9 @@ class HomeController
                 $_SESSION['error'] = "Please enter an email and password to login.";
                 return view('Loginpage');
             }
-        } else {
-            return view('Loginpage');
         }
     }
 
-    public function getProducts()
-    {
-        $db = new DatabaseConnection();
-        $db->Connect();
-
-        return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products
-       SQL, []);
-    }
-
-    public function getProduct($id)
-    {
-        $db = new DatabaseConnection();
-        $db->Connect();
-
-        $product = $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products WHERE product_number = ?
-        SQL, [$id]);
-
-        return view('Productpage', $product);
-    }
 
     public function logout()
     {
@@ -90,16 +62,12 @@ class HomeController
 
         session_destroy();
 
-        redirect('/login');
-    }
-
-    public function shop()
-    {
-        return view('Shop', $this->getProducts());
+        return view('Loginpage');
     }
 
     public function storage()
     {
+
         return view('Storage');
     }
 
@@ -119,8 +87,6 @@ class HomeController
 
         return view('dashboard');
     }
-
-
 
 }
 

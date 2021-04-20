@@ -13,21 +13,21 @@ include_once(component("head.php"));
             <div class="dashboard-container">
             
                 <div class="AdminBox" type="submit" name="Adminpanel" id="Adminpanel" value="Adminpanel">
-                    <a href="<?= url('Adminpanel')?>">
-                        <button class="dashboard-icon">Brugeradministration</button>
-                    </a>
+                    <form action="<?= url('Adminpanel')?>" method="post">
+                        <button class="dashboard-icon"  type="submit" name="Adminpanel" id="Adminpanel" value="Adminpanel">Brugeradministration</button>
+                    </form>
                 </div>
 
                 <div class="AdminBox" type="submit" name="Storage" id="Storage" value="Storage">
-                    <a href="<?= url('Storage')?>" >
-                        <button class="dashboard-icon">Varelager</button>
-                    </a>
+                    <form action="<?= url('Storage')?>" method="post">
+                        <button class="dashboard-icon"  type="submit" name="Storage" id="Storage" value="Storage">Varelager</button>
+                    </form>
                 </div>
 
                 <div class="AdminBox" type="submit" name="Orders" id="Orders" value="Orders">
-                    <a href="<?= url('Orders')?>">
-                        <button class="dashboard-icon">Ordre håndtering </button>
-                    </a>
+                    <form action="<?= url('Orders')?>" method="post">
+                        <button class="dashboard-icon"  type="submit" name="Orders" id="Orders" value="Orders">Ordre håndtering </button>
+                    </form>
                 </div>        
             </div>
         </section>

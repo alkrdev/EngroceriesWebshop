@@ -32,9 +32,9 @@
                             kundens dør</p>
                         <p>Grøntsagerne dyrker vi i samarbejde med passionerede økologiske avlere herhjemme og i udlandet.</p>
                         
-                        <a href="<?= url('register')?>">
+                        <form action="<?= url('register')?>" method="post">
                             <button>Bliv Kunde</button>
-                        </a>
+                        </form>
                     </aside>
                 <?php } ?>
             </section>
