@@ -90,7 +90,6 @@ class HomeController
         session_destroy();
 
         redirect('/login');
-        return view('Loginpage');
     }
 
     public function shop()
