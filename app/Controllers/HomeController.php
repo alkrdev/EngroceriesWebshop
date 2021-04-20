@@ -20,6 +20,7 @@ class HomeController
     }
 
     public function login() {
+        $_SESSION["error"] = "";
         if (isset($_POST['login-submit'])) {
             if (isset($_POST['email']) && isset($_POST['psw'])) {
                 $email = $_POST['email'];
