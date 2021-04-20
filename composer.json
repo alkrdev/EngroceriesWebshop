@@ -8,8 +8,7 @@
     "vlucas/phpdotenv": "^5.3",
     "ext-pdo": "*",
     "phpmailer/phpmailer": "^6.4",
-    "pecee/simple-router": "4.3.2.1",
-    "webmozart/assert": "^1.10"
+    "pecee/simple-router": "4.3.2.1"
   },
   "name": "engroceries/webshop",
   "description": ""
