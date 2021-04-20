@@ -15,35 +15,6 @@ class HomeController
 
     }
 
-
-
-    public function getProducts()
-    {
-        $db = new DatabaseConnection();
-        $db->Connect();
-
-        return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products
-       SQL, []);
-    }
-
-    public function getProduct($id)
-    {
-        $db = new DatabaseConnection();
-        $db->Connect();
-
-        $product = $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products WHERE product_number = ?
-        SQL, [$id]);
-
-        return view('Productpage', $product);
-    }
-
-    public function shop()
-    {
-        return view('Shop', $this->getProducts());
-    }
-
     public function storage()
     {
         return view('Storage');
