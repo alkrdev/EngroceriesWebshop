@@ -1,19 +1,26 @@
 <?php
 use Pecee\SimpleRouter\SimpleRouter as Router;
 
-Router::get('/', 'HomeController@index');
-//Router::post('/', 'HomeController@login')->name('login');
-Router::post('/orders', 'HomeController@orders')->name('orders');
-Router::post('/varelager', 'HomeController@storage')->name('storage');
-Router::post('/adminpanel', 'HomeController@adminpanel')->name('adminpanel');
-Router::post('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Router::get('/', 'Homecontroller@index');
 
+//Login
+Router::get('/login','HomeController@login');
+Router::post('/login', 'HomeController@login')->name('login');
+
+//register
+Router::get('/register', 'HomeController@register')->name('register');
 Router::post('/register', 'HomeController@register')->name('register');
+
 Router::post('/', 'HomeController@logout')->name('logout');
 
+Router::get('/orders', 'HomeController@orders')->name('orders');
+Router::get('/storage', 'HomeController@storage')->name('storage');
+Router::get('/adminpanel', 'HomeController@adminpanel')->name('adminpanel');
+Router::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
+
 Router::group(['prefix' => '/shop'], function () {
-    Router::post('/', 'HomeController@login')->name('login');
-    Router::post('/', 'HomeController@Shop')->name('Shop');
+    Router::get('/', 'HomeController@Shop')->name('Shop');
     Router::get('/product/{id?}', 'HomeController@getProduct');
 });
 

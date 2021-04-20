@@ -10,20 +10,20 @@
 
        
         <div class="nav" type="submit" name="dashboard" id="dashboard" value="dashboard">
-            <form action="<?= url('dashboard')?>" method="post">
-                <button class="dashboard"  type="submit" name="dashboard" id="dashboard" value="dashboard">Dashboard</button>
-            </form>
+            <a href="<?= url('dashboard')?>">
+                <button class="dashboard">Dashboard</button>
+            </a>
         </div>
 
         <div class="nav" type="submit" name="shop" id="shop" value="shop">
-            <form action="<?= url('shop')?>" method="post">
-                <button class="shop"  type="submit" name="shop" id="shop" value="shop">shop </button>
-            </form>
+            <a href="<?= url('shop')?>">
+                <button class="shop">shop </button>
+            </a>
         </div>
 
         <div id="profilebutton"><?= $_SESSION['name'] ?>            
             <form action="<?= url('logout')?>" method="post">
-                <input type="submit" value="Log ud"></input>
+                <input type="submit" value="Log ud"/>
             </form>
         </div>
     <?php } ?>
