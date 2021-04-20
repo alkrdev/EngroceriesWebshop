@@ -20,11 +20,11 @@ Router::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
 
 Router::group(['prefix' => '/shop'], function () {
-    Router::get('/', 'HomeController@Shop')->name('Shop');
+    Router::get('/', 'ShopController@Shop')->name('Shop');
     Router::post('/lowprice', 'ShopController@lowPrice')->name('lowPrice');
     Router::post('/highprice', 'ShopController@highPrice')->name('highPrice');
     Router::post('/a-z', 'ShopController@az')->name('az');
     Router::post('/z-a', 'ShopController@za')->name('za');
-    Router::get('/product/{id?}', 'HomeController@getProduct');
+    Router::get('/product/{id?}', 'ShopController@getProduct');
 });
 
