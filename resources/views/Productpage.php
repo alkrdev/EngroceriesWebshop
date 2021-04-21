@@ -1,7 +1,6 @@
 <?php
 /* @var array $params */
 $product = $params[0];
-var_dump($product);
 ?>
 
 <!doctype html>

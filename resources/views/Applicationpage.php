@@ -56,7 +56,7 @@ include_once(component("head.php"));
                             <?php
                         }
                     } else {?>
-                        <th scope="row">Ingen Ansøgninger</th>
+                        <th>Ingen Ansøgninger</th>
                         <?php
                     }?>
                     </tbody>

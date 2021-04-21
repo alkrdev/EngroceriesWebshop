@@ -19,8 +19,8 @@ Router::group(['prefix' => '/dashboard'], function () {
     Router::get('/storage', 'HomeController@storage')->name('storage');
     Router::group(['prefix' => '/applications'], function () {
         Router::get('/', 'HomeController@showApplications')->name('show-applications');
-        Router::post('/','UserController@confirmApplication')->name('confirm-application');
-        Router::post('/', 'UserController@denyApplication')->name('deny-application');
+        Router::post('/confirm','UserController@confirmApplication')->name('confirm-application');
+        Router::post('/deny', 'UserController@denyApplication')->name('deny-application');
     });
 
 });
