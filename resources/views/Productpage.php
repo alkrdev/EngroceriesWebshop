@@ -18,7 +18,7 @@ include_once(component("head.php"));
 
                 <article id="product-article">
                 <div id="product-image">
-                        <img src="<?= '/images/' . $product['image']  ?>"> </img>
+                        <img src="<?= '/images/' . $product['image']  ?>">
                 </div>
                 </article>
 

@@ -28,7 +28,13 @@ include_once(component("head.php"));
                     <a href="<?= url('Orders')?>">
                         <button class="dashboard-icon">Ordre håndtering </button>
                     </a>
-                </div>        
+                </div>
+
+                <div class="AdminBox" type="submit" name="create-product" id="create-product" value="create-product">
+                    <a href="<?= url('show-create-product')?>">
+                        <button class="dashboard-icon">Opret Produkt</button>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
