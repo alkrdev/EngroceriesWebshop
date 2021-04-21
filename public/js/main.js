@@ -65,6 +65,12 @@ $(document).ready(function() {
 
     $('#search').keyup(function(event){
         if(event.keyCode == '13'){
+            var input = $(this).val();
+
+            if (input !== "") {
+            } else {                
+                $(location).attr("href", "/shop");
+            }  
         }
     });
 })
