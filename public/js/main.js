@@ -1,3 +1,10 @@
+String.prototype.padLeading = function(padStr, len) {
+    var str = this;
+    while (str.length < len)
+        str = padStr + str;
+    return str;
+}
+
 // Source: https://stackoverflow.com/a/46181
 function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -68,6 +75,24 @@ $(document).ready(function() {
             var input = $(this).val();
 
             if (input !== "") {
+                fetch("http://engrocerieswebshop.test/shop/products", {
+                    headers: {
+                        "Content-Type": "application/json",
+                    },                
+                }).then(res => res.json())
+                .then(json => {
+                    var found = json.find(element => element["product_number"] === input);
+    
+                    if (!found) {
+                        found = json.find(element => element["product_number"] === input.padLeading("0", 13));
+                    }
+    
+                    if (found) {                    
+                        $(location).attr("href", "/shop/product/" + found["product_number"]);
+                    } else {                     
+                        $(location).attr("href", "/shop/filtered/" + input);
+                    }
+                })
             } else {                
                 $(location).attr("href", "/shop");
             }  
