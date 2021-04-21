@@ -17,7 +17,7 @@ class Mailer
 
         //Server settings
         $this->mailer->isSMTP();
-        $this->mailer->Host = getenv('MAIL_HOST');
+        $this->mailer->Host = $_ENV['MAIL_HOST'];
         $this->mailer->SMTPAuth = true;
         $this->mailer->Username = $_ENV['MAIL_USERNAME'];
         $this->mailer->Password = $_ENV['MAIL_PASSWORD'];
