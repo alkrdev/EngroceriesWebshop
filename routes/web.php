@@ -12,11 +12,18 @@ Router::post('/register', 'UserController@SendApplication')->name('register');
 
 Router::post('/', 'UserController@logout')->name('logout');
 
-Router::get('/orders', 'HomeController@orders')->name('orders');
-Router::get('/storage', 'HomeController@storage')->name('storage');
-Router::get('/adminpanel', 'HomeController@adminpanel')->name('adminpanel');
-Router::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+//dashboard
+Router::group(['prefix' => '/dashboard'], function () {
+    Router::get('/', 'HomeController@dashboard')->name('dashboard');
+    Router::get('/orders', 'HomeController@orders')->name('orders');
+    Router::get('/storage', 'HomeController@storage')->name('storage');
+    Router::group(['prefix' => '/applications'], function () {
+        Router::get('/', 'HomeController@showApplications')->name('show-applications');
+        Router::post('/confirm','UserController@confirmApplication')->name('confirm-application');
+        Router::post('/deny', 'UserController@denyApplication')->name('deny-application');
+    });
 
+});
 
 //Shop
 Router::group(['prefix' => '/shop'], function () {
