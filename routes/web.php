@@ -21,6 +21,7 @@ Router::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 //Shop
 Router::group(['prefix' => '/shop'], function () {
     Router::get('/', 'ShopController@Shop')->name('Shop');
+
     Router::post('/lowprice', 'ShopController@lowPrice')->name('lowPrice');
     Router::post('/highprice', 'ShopController@highPrice')->name('highPrice');
     Router::post('/a-z', 'ShopController@az')->name('az');

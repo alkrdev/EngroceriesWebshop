@@ -75,7 +75,6 @@ class UserController
 
                 if (count($rows) > 0) {
                     $user = $rows[0];
-                    var_dump($user);
                     if ($user['password'] == hash('sha256', $pass) && ($user['active'] == true)) {
 
                         $_SESSION['is_auth'] = true;
@@ -86,7 +85,7 @@ class UserController
                         redirect('/shop');
 
                     } else {
-                        $_SESSION['error'] = $user['active'];
+                        $_SESSION['error'] = "Denne bruger er ikke aktiv";
                         return view('Loginpage');
                     }
                 } else {
