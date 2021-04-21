@@ -1,3 +1,8 @@
+<?php
+/* @var array $params */
+$registration_success = $params['success_message'];
+?>
+
 <!doctype html>
 <html class="no-js" lang="da-DK">
 
@@ -7,8 +12,9 @@
     <body>
         <?php 
             include_once(component("header.php"));
-        ?> 
+        ?>
         <main>
+            <span><?php if (isset($registration_success)) echo $registration_success;?></span>
             <h1>Velkommen til Engroceries A/S</h1>
             <p>Vi kan tilbyde vores kunder de mest populære produkter på markedet, til de skarpeste priser.</p>
             <section>
