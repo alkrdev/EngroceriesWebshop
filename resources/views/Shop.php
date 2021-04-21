@@ -46,7 +46,7 @@ include_once(component("head.php"));
                         ?>
                         <div class="product" data-id="<?=$product['product_number']?>">
                             <img src="<?= '/images/' . $product['image'] ?>">
-                            <div>
+                            <div id="product-description">
                                 <h2> <?= $product['name'] ?> </h2>
                                 <p><?= substr($product['description'], 0, 50)?>...</p>
                                 <p class="price">Pris kr. <?= $product['price_per_unit'] ?>,- </p>
