@@ -32,6 +32,10 @@ class ShopController
     {
         return view('shop', $this->getZa());
     }
+
+    public function productsfiltered($query) {
+        return view('shop', $this->getProductsFiltered($query));
+    }
     //Return view ends here 
 
 
@@ -89,7 +93,31 @@ class ShopController
         $db = new DatabaseConnection();
         $db->Connect();
         return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products 
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+        SQL, []);
+    }
+
+    //Get products 
+    public function getProductsString() {
+        $db = new DatabaseConnection();
+        $db->Connect();
+    
+        return json_encode($db->QueryWithParamsFetchAll(<<<SQL
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+        SQL, []));
+    }
+
+    public function getProductsFiltered ($query) {
+        $db = new DatabaseConnection();
+        $db->Connect();
+    
+        return $db->QueryWithParamsFetchAll(<<<SQL
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+            WHERE name LIKE '%$query%' 
+            OR description LIKE '%$query%'
         SQL, []);
     }
 

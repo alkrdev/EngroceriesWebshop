@@ -18,8 +18,9 @@ Router::get('/adminpanel', 'HomeController@adminpanel')->name('adminpanel');
 Router::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
 
+
 //Shop
-Router::group(['prefix' => '/shop'], function () {
+Router::group(['prefix' => '/shop', 'defaultParameterRegex' => '[\w\-\æ\ø\å]+'], function () {
     Router::get('/', 'ShopController@Shop')->name('Shop');
 
     Router::post('/lowprice', 'ShopController@lowPrice')->name('lowPrice');
@@ -27,5 +28,10 @@ Router::group(['prefix' => '/shop'], function () {
     Router::post('/a-z', 'ShopController@az')->name('az');
     Router::post('/z-a', 'ShopController@za')->name('za');
     Router::get('/product/{id?}', 'ShopController@getProduct');
+
+    Router::get('/filtered/{query}', 'ShopController@productsfiltered');
+
+    // API Endpoint
+    Router::get('/products', 'ShopController@getProductsString');
 });
 
