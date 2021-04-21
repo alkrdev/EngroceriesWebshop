@@ -160,7 +160,7 @@ class UserController
 
             $mail->send($user['email'], $user['name'], 'Din ansøgning er godkendt', $body);
         }
-        //redirect(url('show-applications'));
+        redirect(url('show-applications'));
     }
 
     public function denyApplication()
@@ -202,6 +202,6 @@ class UserController
 
             $mail->send($user['email'], $user['name'], 'Din ansøgning er Afslået', $body);
         }
-        //redirect(url('show-applications'));
+        redirect(url('show-applications'));
     }
 }

@@ -25,7 +25,7 @@ include_once(component("head.php"));
                 <aside id="product-aside">
                     <h1><?=$product['name']?></h1>
                     <p>VareNr. <?=$product['product_number']?></p>
-                    <h4>Pris kr. <?=$product['price_per_unit']?>,-</h3>
+                    <h4>Pris kr. <?=$product['price_per_unit']?>,-</h4>
                     <p>Beskrivelse: <?=$product['description']?></p>
                     <form action="/action_page.php">
                         <label for="quantity"> Vælg antal :</label>
