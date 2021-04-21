@@ -16,7 +16,7 @@ include_once(component("head.php"));
             <section id="shop">
                 <!-- Filter Toolbar begins -->
                 <div id="toolbar">
-                    <h2>Sotere efter:</h2>
+                    <h2>Sorter efter:</h2>
                     <!-- Order by High price button  -->
                     <form id="order-by" action="<?= url('highPrice')?>" method="post">
                         <button class="price-sort"  type="submit" name="shophigh" id="shophigh" value="shophigh">Pris: Høj til lav</button>

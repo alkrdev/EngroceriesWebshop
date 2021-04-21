@@ -12,9 +12,9 @@ include_once(component("head.php"));
         <section>
             <div class="dashboard-container">
             
-                <div class="AdminBox" type="submit" name="Adminpanel" id="Adminpanel" value="Adminpanel">
-                    <a href="<?= url('Adminpanel')?>">
-                        <button class="dashboard-icon">Brugeradministration</button>
+                <div class="AdminBox" type="submit" name="Applications" id="Applications" value="Applications">
+                    <a href="<?= url('show-applications')?>">
+                        <button class="dashboard-icon">Ansøgninger</button>
                     </a>
                 </div>
 
