@@ -1,5 +1,7 @@
 <header>
-    <h1>Engroceries</h1>
+    <div id="logo">
+        <img src="http://engrocerieswebshop.test/img/long.png" width="230px"> </img>
+    </div>
     <input type="text" name="search" id="search">
     <!-- <nav>
     </nav> -->
