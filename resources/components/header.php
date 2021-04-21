@@ -1,7 +1,9 @@
 
 
 <header>
-    <h1>Engroceries</h1>
+    <div id="logo">
+        <img src="http://engrocerieswebshop.test/img/long.png" width="230px"> </img>
+    </div>
     <?php if ($_SERVER["REQUEST_URI"] != "/login") { ?>
         <input type="text" name="search" id="search">    
     <?php } ?>

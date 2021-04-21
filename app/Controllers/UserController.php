@@ -2,17 +2,20 @@
 
 
 namespace App\Controllers;
+
 use App\DatabaseConnection;
-use Webmozart\Assert\Assert;
+use App\Mailer;
 
 class UserController
 {
-    public function register() {
+    public function register()
+    {
         return view('Register');
     }
 
-    public function SendApplication(){
-        if (isset($_POST['registration-submit'])){
+    public function SendApplication()
+    {
+        if (isset($_POST['registration-submit'])) {
             $name = $_POST['name'];
             $email = $_POST['email'];
             $phone_number = $_POST['phone-number'];
@@ -25,27 +28,27 @@ class UserController
             //password regex
             $uppercase = preg_match('@[A-Z]@', $password);
             $lowercase = preg_match('@[a-z]@', $password);
-            $number    = preg_match('@[0-9]@', $password);
-            $special   = preg_match('@\W@', $password);
+            $number = preg_match('@[0-9]@', $password);
+            $special = preg_match('@\W@', $password);
 
             //check if passwords match
-            if ($password != $password_repeated){
+            if ($password != $password_repeated) {
                 $params['error_message'] = 'Passwords er ikke ens';
                 return view('Register', $params);
             }
             //check if password satisfies regex
-            if(!$uppercase || !$lowercase || !$number || !$special || strlen($password) < 8) {
-                $params['error_message'] = 'Password opfylder ikke krav!' ;
+            if (!$uppercase || !$lowercase || !$number || !$special || strlen($password) < 8) {
+                $params['error_message'] = 'Password opfylder ikke krav!';
                 return view('Register', $params);
             }
             //checks if cvr is 8 digits in length
-            if(strlen($cvr) != 8 ){
-                $params['error_message'] = 'CVR nummer er ikke gyldigt' ;
+            if (strlen($cvr) != 8) {
+                $params['error_message'] = 'CVR nummer er ikke gyldigt';
                 return view('Register', $params);
             }
             //checks if phone_number is 8 digits in length
-            if(strlen($phone_number) != 8){
-                $params['error_message'] = 'telefon nummer er ikke gyldigt' ;
+            if (strlen($phone_number) != 8) {
+                $params['error_message'] = 'telefon nummer er ikke gyldigt';
                 return view('Register', $params);
             }
 
@@ -55,14 +58,15 @@ class UserController
             $db->QueryWithParamsFetchAll(<<<SQL
                 INSERT INTO users(name, phone_number, email, password, address, zip_code, cvr, role, active) 
                 VALUES (?,?,?,?,?,?,?,'Advanced',0);
-            SQL, [$name,$phone_number,$email,hash('sha256', $password),$address, $zip_code ,$cvr]);
+            SQL, [$name, $phone_number, $email, hash('sha256', $password), $address, $zip_code, $cvr]);
             $params['success_message'] = 'Ansøgning Sendt';
             return view('LoginPage', $params);
         }
         return view('Register');
     }
 
-    public function login() {
+    public function login()
+    {
         $_SESSION["error"] = "";
         if (isset($_POST['login-submit'])) {
             if (isset($_POST['email']) && isset($_POST['psw'])) {
@@ -85,7 +89,7 @@ class UserController
                         redirect('/shop');
 
                     } else {
-                        $_SESSION['error'] = "Denne bruger er ikke aktiv";
+                        $_SESSION['error'] =  "Invalid email or password. Please try again.";
                         return view('Loginpage');
                     }
                 } else {
@@ -114,5 +118,90 @@ class UserController
         session_destroy();
 
         redirect('/login');
+    }
+
+    public function confirmApplication()
+    {
+        if (isset($_POST['applicant_id'])) {
+            $user_id = $_POST['applicant_id'];
+            $db = new DatabaseConnection();
+            $db->Connect();
+
+            $users = $db->QueryWithParamsFetchAll(<<<SQL
+                SELECT * FROM users
+                WHERE id = ?
+            SQL, [$user_id]);
+
+            $user = $users[0];
+
+            $db->QueryWithParamsFetchAll(<<<SQL
+                UPDATE users
+                SET active = 1
+                WHERE id = ?
+            SQL, [$user_id]);
+
+            // Mail section
+            $mail = new Mailer();
+            $body = <<<_LOADTEMPLATE
+                <div>
+                    <p>Hej {$user['name']},</p>
+                    <br>
+                    <p>Vi har godkendt din ansøgning</p>
+                    <p>Så nu kan logge ind og bruge Engroceries services</p>
+                    <br>
+                    <p>Med venlig hilsen</p>
+                    <br>
+                    <p>Engroceries A/S</p>
+                </div>
+                <div>
+                    <img src="/images/engroceries_logo.png"/>
+                </div>               
+            _LOADTEMPLATE;
+
+            $mail->send($user['email'], $user['name'], 'Din ansøgning er godkendt', $body);
+        }
+        redirect(url('show-applications'));
+    }
+
+    public function denyApplication()
+    {
+        if (isset($_POST['applicant_id'])) {
+            $user_id = $_POST['applicant_id'];
+            $db = new DatabaseConnection();
+            $db->Connect();
+
+            $users = $db->QueryWithParamsFetchAll(<<<SQL
+                SELECT * FROM users
+                WHERE id = ?
+            SQL, [$user_id]);
+
+            $user = $users[0];
+
+            $db->QueryWithParamsFetchAll(<<<SQL
+                DELETE FROM users
+                where id = ?
+            SQL, [$user_id]);
+
+            //Mail Section
+            $mail = new Mailer();
+            $body = <<<_LOADTEMPLATE
+                <div>
+                    <p>Hej {$user['name']},</p>
+                    <br>
+                    <p>Vi har Afvist din ansøgning</p>
+                    <p>Hvis du vil klage vores beslutning kan du kontakte os via telefon</p>
+                    <br>
+                    <p>Med venlig hilsen</p>
+                    <br>
+                    <p>Engroceries A/S</p>
+                </div>
+                <div>
+                    <img src="/images/engroceries_logo.png"/>
+                </div>               
+            _LOADTEMPLATE;
+
+            $mail->send($user['email'], $user['name'], 'Din ansøgning er Afslået', $body);
+        }
+        redirect(url('show-applications'));
     }
 }

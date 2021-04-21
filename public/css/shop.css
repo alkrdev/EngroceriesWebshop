@@ -29,6 +29,11 @@
     font-weight: bold;
 }
 
+
+#product-description {
+    text-align: center;
+}
+
 .product:hover {
     cursor: pointer;
     margin: 13px;
@@ -75,6 +80,46 @@
     background-color: rgb(120, 214, 26);
     color: white;
 }
+
+#product-image img {
+    width: 400px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    transition: 0.3s;
+}
+
+
+#product-article {
+    border: unset;
+    display: unset;
+    text-align: center;
+}
+
+#product-section {
+    padding: 120px;
+}
+
+
+#product-aside {
+    -webkit-box-shadow: 10px 10px 5px -5px rgb(0 0 0 / 22%);
+    -moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.22);
+    box-shadow: 10px 10px 5px -5px rgb(0 0 0 / 22%);
+    border: solid;
+    border-width: thin;
+    background-color: white;
+    padding: 30px;
+    margin-right: 150px;
+}
+
+
+.bestil {
+    border-radius: 10px;
+    height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+
+
 
 section {
   background-color: #4fad3f12!important;

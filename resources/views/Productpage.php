@@ -1,7 +1,6 @@
 <?php
 /* @var array $params */
 $product = $params[0];
-var_dump($product);
 ?>
 
 <!doctype html>
@@ -15,20 +14,24 @@ include_once(component("head.php"));
             include_once(component("header.php"));
         ?> 
         <main>
-            <section>
+            <section id="product-section">
 
-                <article>
-                    <div>
-                        <img src="<?= '/images/' . $product['image'] ?>"
-                    </div>
+                <article id="product-article">
+                <div id="product-image">
+                        <img src="<?= '/images/' . $product['image']  ?>"> </img>
+                </div>
                 </article>
 
-                <aside>
+                <aside id="product-aside">
                     <h1><?=$product['name']?></h1>
                     <p>VareNr. <?=$product['product_number']?></p>
-                    <h3>Pris kr. <?=$product['price_per_unit']?>,-</h3>
-                    <h2>Beskrivelse: <?=$product['description']?></h2>
-                    <button type="submit">Bestil</button>
+                    <h4>Pris kr. <?=$product['price_per_unit']?>,-</h4>
+                    <p>Beskrivelse: <?=$product['description']?></p>
+                    <form action="/action_page.php">
+                        <label for="quantity"> Vælg antal :</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="5">
+                        <button class="bestil" type="submit"> Bestil </button>
+                    </form>
                 </aside>
             </section>
         </main>

@@ -22,13 +22,18 @@ class HomeController
 
     public function orders()
     {
-
         return view('Orders');
     }
 
-    public function adminpanel()
+    public function showApplications()
     {
-        return view('adminpanel');
+        $db = new DatabaseConnection();
+        $db->Connect();
+
+        $applicants = $db->QueryWithParamsFetchAll(<<<SQL
+            SELECT * FROM users WHERE role = 'Advanced' AND active = 0
+        SQL, []);
+        return view('Applicationpage', $applicants);
     }
 
     public function dashboard()
