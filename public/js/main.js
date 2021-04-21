@@ -62,4 +62,9 @@ $(document).ready(function() {
     {
         $(location).attr("href", "/shop/product/" + this.dataset.id);
     })
+
+    $('#search').keyup(function(event){
+        if(event.keyCode == '13'){
+        }
+    });
 })
