@@ -17,6 +17,11 @@ Router::group(['prefix' => '/dashboard'], function () {
     Router::get('/', 'HomeController@dashboard')->name('dashboard');
     Router::get('/orders', 'HomeController@orders')->name('orders');
     Router::get('/storage', 'HomeController@storage')->name('storage');
+
+    Router::group(['prefix' => '/create-product'], function (){
+        Router::get('/', 'HomeController@showCreateProductPage')->name('show-create-product');
+        Router::post('/', 'HomeController@createProduct')->name('create-product');
+    });
     Router::group(['prefix' => '/applications'], function () {
         Router::get('/', 'HomeController@showApplications')->name('show-applications');
         Router::post('/confirm','UserController@confirmApplication')->name('confirm-application');

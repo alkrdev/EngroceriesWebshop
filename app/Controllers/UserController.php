@@ -122,86 +122,92 @@ class UserController
 
     public function confirmApplication()
     {
-        if (isset($_POST['applicant_id'])) {
-            $user_id = $_POST['applicant_id'];
-            $db = new DatabaseConnection();
-            $db->Connect();
+        if ($_SESSION['user_role'] == 'Administrator'){
+            if (isset($_POST['applicant_id'])) {
+                $user_id = $_POST['applicant_id'];
+                $db = new DatabaseConnection();
+                $db->Connect();
 
-            $users = $db->QueryWithParamsFetchAll(<<<SQL
+                $users = $db->QueryWithParamsFetchAll(<<<SQL
                 SELECT * FROM users
                 WHERE id = ?
             SQL, [$user_id]);
 
-            $user = $users[0];
+                $user = $users[0];
 
-            $db->QueryWithParamsFetchAll(<<<SQL
+                $db->QueryWithParamsFetchAll(<<<SQL
                 UPDATE users
                 SET active = 1
                 WHERE id = ?
             SQL, [$user_id]);
 
-            // Mail section
-            $mail = new Mailer();
-            $body = <<<_LOADTEMPLATE
-                <div>
-                    <p>Hej {$user['name']},</p>
-                    <br>
-                    <p>Vi har godkendt din ansøgning</p>
-                    <p>Så nu kan logge ind og bruge Engroceries services</p>
-                    <br>
-                    <p>Med venlig hilsen</p>
-                    <br>
-                    <p>Engroceries A/S</p>
-                </div>
-                <div>
-                    <img src="/images/engroceries_logo.png"/>
-                </div>               
-            _LOADTEMPLATE;
-
-            $mail->send($user['email'], $user['name'], 'Din ansøgning er godkendt', $body);
+                // Mail section
+                $mail = new Mailer();
+                $body = <<<_LOADTEMPLATE
+                    <div>
+                        <p>Hej {$user['name']},</p>
+                        <br>
+                        <p>Vi har godkendt din ansøgning</p>
+                        <p>Så nu kan logge ind og bruge Engroceries services</p>
+                        <br>
+                        <p>Med venlig hilsen</p>
+                        <br>
+                        <p>Engroceries A/S</p>
+                    </div>
+                    <div>
+                        <img src="/images/engroceries_logo.png"/>
+                    </div>               
+                _LOADTEMPLATE;
+                $mail->send($user['email'], $user['name'], 'Din ansøgning er godkendt', $body);
+            }
+            redirect(url('show-applications'));
+        } else {
+            $this->logout();
         }
-        redirect(url('show-applications'));
     }
 
     public function denyApplication()
     {
-        if (isset($_POST['applicant_id'])) {
-            $user_id = $_POST['applicant_id'];
-            $db = new DatabaseConnection();
-            $db->Connect();
+        if($_SESSION['user_role'] == 'Administrator'){
+            if (isset($_POST['applicant_id'])) {
+                $user_id = $_POST['applicant_id'];
+                $db = new DatabaseConnection();
+                $db->Connect();
 
-            $users = $db->QueryWithParamsFetchAll(<<<SQL
+                $users = $db->QueryWithParamsFetchAll(<<<SQL
                 SELECT * FROM users
                 WHERE id = ?
             SQL, [$user_id]);
 
-            $user = $users[0];
+                $user = $users[0];
 
-            $db->QueryWithParamsFetchAll(<<<SQL
+                $db->QueryWithParamsFetchAll(<<<SQL
                 DELETE FROM users
                 where id = ?
             SQL, [$user_id]);
 
-            //Mail Section
-            $mail = new Mailer();
-            $body = <<<_LOADTEMPLATE
-                <div>
-                    <p>Hej {$user['name']},</p>
-                    <br>
-                    <p>Vi har Afvist din ansøgning</p>
-                    <p>Hvis du vil klage vores beslutning kan du kontakte os via telefon</p>
-                    <br>
-                    <p>Med venlig hilsen</p>
-                    <br>
-                    <p>Engroceries A/S</p>
-                </div>
-                <div>
-                    <img src="/images/engroceries_logo.png"/>
-                </div>               
-            _LOADTEMPLATE;
-
-            $mail->send($user['email'], $user['name'], 'Din ansøgning er Afslået', $body);
+                //Mail Section
+                $mail = new Mailer();
+                $body = <<<_LOADTEMPLATE
+                    <div>
+                        <p>Hej {$user['name']},</p>
+                        <br>
+                        <p>Vi har Afvist din ansøgning</p>
+                        <p>Hvis du vil klage vores beslutning kan du kontakte os via telefon</p>
+                        <br>
+                        <p>Med venlig hilsen</p>
+                        <br>
+                        <p>Engroceries A/S</p>
+                    </div>
+                    <div>
+                        <img src="/images/engroceries_logo.png"/>
+                    </div>               
+                _LOADTEMPLATE;
+                $mail->send($user['email'], $user['name'], 'Din ansøgning er Afslået', $body);
+            }
+            redirect(url('show-applications'));
+        } else {
+            $this->logout();
         }
-        redirect(url('show-applications'));
     }
 }
