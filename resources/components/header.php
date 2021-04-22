@@ -1,16 +1,20 @@
+
+
 <header>
     <div id="logo">
         <img src="http://engrocerieswebshop.test/img/long.png" width="230px"> </img>
     </div>
-    <input type="text" name="search" id="search">
+    <?php if ($_SERVER["REQUEST_URI"] != "/login") { ?>
+        <form method="POST" action="<?= url('filtered') ?>">
+            <input type="text" name="query" id="search">   
+        </form> 
+    <?php } ?>
     <!-- <nav>
     </nav> -->
     <?php if ($_SESSION['is_auth'] == true) { ?>
 
 
   <div class="navcontainer">
-
-       
         <div class="nav" type="submit" name="dashboard" id="dashboard" value="dashboard">
             <a href="<?= url('dashboard')?>">
                 <button class="dashboard">Dashboard</button>

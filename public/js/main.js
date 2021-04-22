@@ -19,9 +19,9 @@ $(document).ready(function() {
         // Password validation?
     })
 
-  $(".product").click(function () {
-    $(location).attr("href", "/shop/product/" + this.dataset.product_number);
-  })
+    $(".product").click(function () {
+        $(location).attr("href", "/shop/product/" + this.dataset.product_number);
+    })
 
     // REGISTER
     $("#pswregister").on("change", function() {
@@ -62,4 +62,6 @@ $(document).ready(function() {
     {
         $(location).attr("href", "/shop/product/" + this.dataset.id);
     })
+
+   
 })

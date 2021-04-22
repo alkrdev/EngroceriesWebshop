@@ -25,13 +25,20 @@ Router::group(['prefix' => '/dashboard'], function () {
 
 });
 
+
 //Shop
-Router::group(['prefix' => '/shop'], function () {
+Router::group(['prefix' => '/shop', 'defaultParameterRegex' => '[\w\-\æ\ø\å]+'], function () {
     Router::get('/', 'ShopController@Shop')->name('Shop');
+
     Router::post('/lowprice', 'ShopController@lowPrice')->name('lowPrice');
     Router::post('/highprice', 'ShopController@highPrice')->name('highPrice');
     Router::post('/a-z', 'ShopController@az')->name('az');
     Router::post('/z-a', 'ShopController@za')->name('za');
     Router::get('/product/{id?}', 'ShopController@getProduct');
+
+    Router::post('/', 'ShopController@productsfiltered')->name('filtered');
+
+    // API Endpoint
+    Router::get('/products', 'ShopController@getProductsString');
 });
 
