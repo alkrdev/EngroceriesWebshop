@@ -41,8 +41,10 @@ class ShopController
         $db = new DatabaseConnection();
         $db->Connect();
         return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products ORDER BY price_per_unit 
-       SQL, []);
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+            ORDER BY price_per_unit 
+        SQL, []);
     }
 
     //Filter function sort by high price
@@ -51,8 +53,10 @@ class ShopController
         $db = new DatabaseConnection();
         $db->Connect();
         return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products ORDER BY price_per_unit DESC
-       SQL, []);
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+            ORDER BY price_per_unit DESC
+        SQL, []);
     }
 
     //Filter function sort by A-Z
@@ -61,7 +65,9 @@ class ShopController
         $db = new DatabaseConnection();
         $db->Connect();
         return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products ORDER BY name ASC
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+            ORDER BY name ASC
         SQL, []);
     }
 
@@ -71,7 +77,9 @@ class ShopController
         $db = new DatabaseConnection();
         $db->Connect();
         return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products ORDER BY name DESC
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+            ORDER BY name DESC
         SQL, []);
     }
 
@@ -81,8 +89,45 @@ class ShopController
         $db = new DatabaseConnection();
         $db->Connect();
         return $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products 
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
         SQL, []);
+    }
+
+    //Get products 
+    public function getProductsString() {
+        $db = new DatabaseConnection();
+        $db->Connect();
+    
+        return json_encode($db->QueryWithParamsFetchAll(<<<SQL
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+        SQL, []));
+    }
+
+    public function productsfiltered() {
+        $db = new DatabaseConnection();
+        $db->Connect();
+
+        $query = $_POST['query'];
+
+        if (ctype_digit($query)) {
+            $sqlquery = <<<SQL
+                SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+                FROM products 
+                WHERE product_number = $query
+            SQL;
+            return view('Productpage', $db->QueryWithParamsFetchAll($sqlquery, []));
+        } else {
+            $sqlquery = <<<SQL
+                SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+                FROM products 
+                WHERE name LIKE '%$query%' 
+                OR description LIKE '%$query%'
+            SQL;
+            return view('Shop', $db->QueryWithParamsFetchAll($sqlquery, []));
+        }
+
     }
 
     public function getProduct($id)
@@ -91,7 +136,9 @@ class ShopController
         $db->Connect();
 
         $product = $db->QueryWithParamsFetchAll(<<<SQL
-            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number FROM products WHERE product_number = ?
+            SELECT id, image, name, description, price_per_unit, LPAD(product_number, 13, 0) as product_number 
+            FROM products 
+            WHERE product_number = ?
         SQL, [$id]);
 
         return view('Productpage', $product);
