@@ -36,7 +36,7 @@ Router::group(['prefix' => '/shop', 'defaultParameterRegex' => '[\w\-\æ\ø\å]+
     Router::post('/z-a', 'ShopController@za')->name('za');
     Router::get('/product/{id?}', 'ShopController@getProduct');
 
-    Router::get('/filtered/{query}', 'ShopController@productsfiltered');
+    Router::post('/', 'ShopController@productsfiltered')->name('filtered');
 
     // API Endpoint
     Router::get('/products', 'ShopController@getProductsString');

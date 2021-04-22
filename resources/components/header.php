@@ -5,7 +5,9 @@
         <img src="http://engrocerieswebshop.test/img/long.png" width="230px"> </img>
     </div>
     <?php if ($_SERVER["REQUEST_URI"] != "/login") { ?>
-        <input type="text" name="search" id="search">    
+        <form method="POST" action="<?= url('filtered') ?>">
+            <input type="text" name="query" id="search">   
+        </form> 
     <?php } ?>
     <!-- <nav>
     </nav> -->
