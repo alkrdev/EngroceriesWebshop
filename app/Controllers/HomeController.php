@@ -8,7 +8,7 @@ class HomeController
 {
     public function index() {
         $_SESSION["error"] = "";
-        if (!$_POST['psw']){
+        if (!isset($_POST['psw'])){
             $_SESSION['loginFailed'] = true;
             redirect('/login');
         }

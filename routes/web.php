@@ -1,7 +1,7 @@
 <?php
 use Pecee\SimpleRouter\SimpleRouter as Router;
 
-Router::get('/', 'Homecontroller@index');
+Router::get('/', 'HomeController@index');
 
 //Login
 Router::get('/login','UserController@login');
