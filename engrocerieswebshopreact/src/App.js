@@ -74,6 +74,8 @@ $(document).ready(function() {
 function App() {
   return (
     <Header />
+    <main></main>
+    <footer></footer>
   );
 }
 
