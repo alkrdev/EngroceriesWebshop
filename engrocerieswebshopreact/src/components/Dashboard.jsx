@@ -1,14 +1,7 @@
-<!doctype html>
-<html class="no-js" lang="da-DK">
+import React from "react";
 
-<?php
-include_once(component("head.php"));
-?>
-<body>
-    <?php 
-        include_once(component("header.php"));
-    ?> 
-    <main>
+const Dashboard = () => {
+    return (
         <section>
             <div class="dashboard-container">
             
@@ -37,11 +30,9 @@ include_once(component("head.php"));
                 </div>
             </div>
         </section>
-    </main>
-    <footer></footer>
+    )
+}
 
-<script src="/js/main.js"></script>
-<script src="/js/vendor/modernizr-3.11.2.min.js"></script>
-</body>
+export default Dashboard;
 
-</html>
+        
