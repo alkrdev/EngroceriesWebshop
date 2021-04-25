@@ -1,19 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="da-DK">
+import React from "react";
 
-<?php
-include_once(component("head.php"));
-?>
-    <body>
-        <?php 
-            include_once(component("header.php"));
-        ?> 
-        <main>
-            <section>
-            </section>
-        </main>
-        <footer></footer>
+const Checkout = () => {
+    return (
+        <section>
+        </section>
+    )
+}
 
-<script src="/js/vendor/modernizr-3.11.2.min.js"></script>
-<script src="/js/main.js"></script>
-</html>
+export default Checkout
