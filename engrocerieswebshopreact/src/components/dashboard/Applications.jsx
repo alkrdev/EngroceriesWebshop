@@ -3,7 +3,7 @@ import React from "react";
 const Applications = () => {
     return (
         <section>
-            <div class="dashboard-container">
+            <div className="dashboard-container">
                 <h1> Ansøgninger </h1>
             </div>
             <div>

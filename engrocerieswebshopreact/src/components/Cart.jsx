@@ -7,7 +7,7 @@ const Cart = () => {
                 <h2>Kunde Login</h2>
                 <form>
                     <input type="text" name="email" id="email" placeholder="Email"></input>
-                    <span id="emailvalidate" class="hidden">Please enter a valid Email address</span>
+                    <span id="emailvalidate" className="hidden">Please enter a valid Email address</span>
 
                     <input type="password" name="psw" id="psw" placeholder="Kode"></input>
 

@@ -21,10 +21,10 @@ const Login = () => {
             <section>
                     <article>
                         <h2>Kunde Login</h2>
-                        <span class="loginerror"></span>
+                        <span className="loginerror"></span>
                         <form action="<?= url('login')?>" method="post">
                             <input type="text" name="email" id="email" placeholder="Email"></input>
-                            <span id="emailvalidate" class="validate">Please enter a valid Email address</span>
+                            <span id="emailvalidate" className="validate">Please enter a valid Email address</span>
 
                             <input type="password" name="psw" id="psw" placeholder="Kode"></input>
 

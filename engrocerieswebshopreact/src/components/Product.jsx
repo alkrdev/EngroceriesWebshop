@@ -17,7 +17,7 @@ const Product = () => {
                 <form action="/action_page.php">
                     <label for="quantity"> Vælg antal :</label>
                         <input type="number" id="quantity" name="quantity" min="1" max="5"></input>
-                    <button class="bestil" type="submit"> Bestil </button>
+                    <button className="bestil" type="submit"> Bestil </button>
                 </form>
             </aside>
         </section>

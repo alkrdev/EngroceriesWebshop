@@ -21,7 +21,7 @@ const CreateProduct = () => {
                         <label>
                             Produkt Beskrivelse
                         </label>
-                        <input class="description-box" type="text" name="description"></input>
+                        <input className="description-box" type="text" name="description"></input>
                         <label>
                             Pris per enhed
                         </label>

@@ -1,3 +1,7 @@
+#root {  
+  padding: 0px 5vw;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,53 +28,19 @@ button:focus {
   outline: none;
 }
 
-/* .validate {
-  display: none;
-  color: red;
-}
-
-.dashboard-container {
-  margin-right: auto;
-  margin-left: auto;
-  width: 80%;
-  float: left;
-}
-
-.dashboard-icon {
-  border-radius: 50px;
-  background: #e0e0e0;
-  box-shadow: inset 20px 20px 40px #b8b8b8, inset -20px -20px 40px #ffffff;
-  border: none;
-  color: rgb(31, 31, 31);
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 500;
-  margin: 4px 2px;
-  cursor: pointer;
-  height: 200px;
-  width: 260px;
-  box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.29);
-  -webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.29);
-  -moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.29);
-
-}
-
-.AdminBox {
-  float: left;
-  margin-left: 50px;
-}*/
-
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
   border-bottom: 1px rgb(87, 87, 87) solid;
-  height: 85px;
+  height: 5vh;
 } 
+
+header a {
+  text-decoration: none;
+  font-size: 1.5em;
+}
 
 .navcontainer {  
   display: flex;
@@ -78,51 +48,42 @@ header {
   width: 30%;
 }
 
-/* 
-
-.title {
-  margin-left: 150px;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-header input {
-  border-radius: 8px;
-  padding: 10px;
-  width: 300px;
-}
-
-header nav {
-  display: flex;
-  justify-content: space-between;
-  width: 200px;
-}
-
-header a {
-  text-decoration: none;
-  font-size: 1.5em;
-}
-
-header div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: 0;
-  padding: 0 25px;
-}
-
-header div:hover {
-  background: rgb(218, 218, 218);
-  cursor: pointer;
-}
-
 section {
   display: flex;
-  justify-content: space-evenly;
+  margin-bottom: 2vh;
+  /* justify-content: space-evenly;
   flex-wrap: wrap;
   padding: 25px;
-  min-height: 450px;
+  min-height: 450px; */
+}
+
+section#shop {
+  justify-content: flex-end;
+}
+
+section#dashboard {  
+  height: 5vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#toolbar {  
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.productcontainer {
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  width: 20%;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
 }
 
 .product img {
@@ -130,9 +91,9 @@ section {
   max-height: 140px;
 }
 
-
-section#shop {
-  justify-content: flex-end;
+/* .validate {
+  display: none;
+  color: red;
 }
 
 section#register {
@@ -183,27 +144,9 @@ section aside {
 height: 200px;
 }
 
-.productcontainer {
-  width: 70vw;
-  display: flex;
-  flex-wrap: wrap;
 
-}
 
-.product {
-  border: black;
-  width: 180px;
-  height: 380px;
-  border: solid;
-  border-style: solid;
-  border-width: 1px;
-  margin: 10px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
+
 
 
 .price {
@@ -244,12 +187,6 @@ height: 200px;
   display: contents; 
   height: 29px!important; 
   width: 140px; 
-}
-
-#toolbar{
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .price-sort {
