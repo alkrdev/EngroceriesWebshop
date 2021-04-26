@@ -1,5 +1,17 @@
 import React from "react";
 
+// $("#email").on("change", function() {
+//     if (validateEmail(this.value)) {
+//         $("#emailvalidate").hide();
+//     } else {
+//         $("#emailvalidate").show();
+//     }
+// })
+
+// $("#psw").on("change", function() {
+//     // Password validation?
+// })
+
 const Login = () => {
     return (
         <React.Fragment>

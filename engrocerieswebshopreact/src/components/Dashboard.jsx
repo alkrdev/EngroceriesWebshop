@@ -3,8 +3,7 @@ import React from "react";
 const Dashboard = () => {
     return (
         <section>
-            <div class="dashboard-container">
-            
+            <div class="dashboard-container">            
                 <div class="AdminBox" type="submit" name="Applications" id="Applications" value="Applications">
                     <a href="<?= url('show-applications')?>">
                         <button class="dashboard-icon">Ansøgninger</button>

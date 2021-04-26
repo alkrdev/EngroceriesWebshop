@@ -1,5 +1,10 @@
 import React from "react";
 
+// $(".product").click(function ()
+// {
+//     $(location).attr("href", "/shop/product/" + this.dataset.id);
+// })
+
 const Shop = () => {
     return (
         <section id="shop">
@@ -25,7 +30,7 @@ const Shop = () => {
 
             <div class="productcontainer">
                 <div class="product" data-id="<?=$product['product_number']?>">
-                    <img src="<?= '/images/' . $product['image'] ?>"></img>
+                    <img src="/images/2eb.jpg"></img>
                     <div id="product-description">
                         <h2> name </h2>
                         <p>description...</p>
