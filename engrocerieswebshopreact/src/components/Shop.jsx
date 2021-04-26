@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // $(".product").click(function ()
 // {
@@ -6,6 +6,29 @@ import React from "react";
 // })
 
 const Shop = () => {
+    const storedJwt = localStorage.getItem('token'); 
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {        
+        if (storedJwt == null || storedJwt == "") {
+            //console.log("NOT LOGGED IN, PUSHED TO LOG IN")
+            
+        } else {
+            fetch("http://localhost:5000/products", {                
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + storedJwt
+                }
+            }).then(res => res.json())
+            .then(json => {
+                setProducts(json)
+                setLoading(false)
+            })
+        }
+    }, [])
+
     return (
         <section id="shop">
             <div id="toolbar">
@@ -25,6 +48,7 @@ const Shop = () => {
             </div>
 
             <div className="productcontainer">
+
                 <div className="product" data-id="<?=$product['product_number']?>">
                     <img src="/images/2eb.jpg" alt="productimage"></img>
                     <div id="productdescription">
